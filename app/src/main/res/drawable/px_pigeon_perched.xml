@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@color/foreground"
+        android:pathData="M10,5 h1 v1 h-1 z M11,5 h1 v1 h-1 z M10,6 h1 v1 h-1 z M11,6 h1 v1 h-1 z M12,6 h1 v1 h-1 z M10,7 h1 v1 h-1 z M11,7 h1 v1 h-1 z M9,8 h1 v1 h-1 z M10,8 h1 v1 h-1 z M11,8 h1 v1 h-1 z M12,8 h1 v1 h-1 z M9,9 h1 v1 h-1 z M10,9 h1 v1 h-1 z M11,9 h1 v1 h-1 z M12,9 h1 v1 h-1 z M9,10 h1 v1 h-1 z M10,10 h1 v1 h-1 z M11,10 h1 v1 h-1 z M12,10 h1 v1 h-1 z M9,11 h1 v1 h-1 z M10,11 h1 v1 h-1 z M11,11 h1 v1 h-1 z M12,11 h1 v1 h-1 z M9,12 h1 v1 h-1 z M10,12 h1 v1 h-1 z M11,12 h1 v1 h-1 z M12,12 h1 v1 h-1 z M9,13 h1 v1 h-1 z M10,13 h1 v1 h-1 z M11,13 h1 v1 h-1 z M12,13 h1 v1 h-1 z M10,14 h1 v1 h-1 z M11,14 h1 v1 h-1 z M10,15 h1 v1 h-1 z M11,15 h1 v1 h-1 z M10,16 h1 v1 h-1 z M11,16 h1 v1 h-1 z M10,17 h1 v1 h-1 z M11,17 h1 v1 h-1 z M10,18 h1 v1 h-1 z M11,18 h1 v1 h-1 z M8,12 h1 v1 h-1 z M8,13 h1 v1 h-1 z M8,14 h1 v1 h-1 z M8,15 h1 v1 h-1 z M9,16 h1 v1 h-1 z M9,17 h1 v1 h-1 z M8,8 h1 v1 h-1 z M8,9 h1 v1 h-1 z M8,10 h1 v1 h-1 z M8,11 h1 v1 h-1 z M7,9 h1 v1 h-1 z M7,10 h1 v1 h-1 z" />
+</vector>

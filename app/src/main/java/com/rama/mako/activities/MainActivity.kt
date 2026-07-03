@@ -33,7 +33,9 @@ import com.rama.mako.managers.ClockManager
 import com.rama.mako.managers.HomeBackgroundManager
 import com.rama.mako.managers.DoubleTapLockManager
 import com.rama.mako.managers.PrefsManager
+import com.rama.mako.views.PigeonEasterEggView
 import com.rama.bohio.managers.ThemeManager
+import kotlin.random.Random
 
 class MainActivity : CsActivity() {
 
@@ -68,9 +70,12 @@ class MainActivity : CsActivity() {
     private lateinit var doubleTapGestureDetector: GestureDetector
     private lateinit var doubleTapLockManager: DoubleTapLockManager
     private var lastAppliedTheme: String? = null
+    private lateinit var pigeonView: PigeonEasterEggView
 
     companion object {
         private const val WALLPAPER_CHANGED_ACTION = "android.intent.action.WALLPAPER_CHANGED"
+        private const val PIGEON_COOLDOWN_MS = 2 * 60 * 60 * 1000L // 2 hours
+        private const val PIGEON_CHANCE = 0.25
     }
 
     private val wallpaperChangedReceiver = object : BroadcastReceiver() {
@@ -98,6 +103,7 @@ class MainActivity : CsActivity() {
         PrefsManager.getInstance(this).initPrefs()
         setContentView(R.layout.view_home)
 
+        pigeonView = findViewById(R.id.pigeon_easter_egg)
         rootView = findViewById(R.id.root)
         applyEdgeToEdgePadding(rootView)
         initDoubleTapToSleep()
@@ -286,6 +292,21 @@ class MainActivity : CsActivity() {
 
         if (isSearchBarAlwaysVisible)
             expandSearch()
+
+        maybeTriggerPigeon()
+    }
+
+    private fun maybeTriggerPigeon() {
+        if (pigeonView.isCurrentlyFlying) return
+
+        val now = System.currentTimeMillis()
+        val lastFlight = prefs.getPigeonLastFlight()
+        if (now - lastFlight < PIGEON_COOLDOWN_MS) return
+
+        if (Random.nextDouble() < PIGEON_CHANCE) {
+            prefs.setPigeonLastFlight(now)
+            pigeonView.fly()
+        }
     }
 
     override fun onPause() {

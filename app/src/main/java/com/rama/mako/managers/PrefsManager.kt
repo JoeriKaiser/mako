@@ -29,6 +29,7 @@ class PrefsManager private constructor(context: Context) : BohioPrefsManager(con
         const val HOME_DOUBLE_TAP_LOCK_METHOD = "home:double_tap_lock_method"
         const val HOME_BACKGROUND_MODE_SCREEN_OPACITY_STRENGTH =
             "home:background_mode:screen_opacity_strength"
+        const val PIGEON_LAST_FLIGHT = "pigeon:last_flight"
         const val GROUPS_IDS = "groups:ids"
         const val GROUPS_HEADERS = "groups:headers"
         const val GROUPS_COLLAPSIBLE = "groups:collapsible"
@@ -394,6 +395,12 @@ class PrefsManager private constructor(context: Context) : BohioPrefsManager(con
     fun setHomeBackgroundScreenOpacityStrength(strength: Int) {
         prefs.edit().putInt(FileKeys.HOME_BACKGROUND_MODE_SCREEN_OPACITY_STRENGTH, strength).apply()
     }
+
+    fun getPigeonLastFlight(): Long =
+        prefs.getLong(FileKeys.PIGEON_LAST_FLIGHT, 0L)
+
+    fun setPigeonLastFlight(timestamp: Long) =
+        prefs.edit().putLong(FileKeys.PIGEON_LAST_FLIGHT, timestamp).apply()
 
     fun getHomeBackgroundMode(): String {
         return when (prefs.getString(FileKeys.HOME_BACKGROUND_MODE, BackgroundMode.DEFAULT)) {
